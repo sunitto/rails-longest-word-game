@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h1>Bienvenue à Longest word</h1>
+  </div>
+  <div>
+    <h2><strong>Règles du jeu:</strong></h2>
+    <p>Vous devrez composer un mot à partir d'une liste de 10 lettres aléatoires.</p>
+    <ul>
+      <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
+      <li>Seul un mot présent dans le dictionnaire sera valable.</li>
+      <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
+      <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
+    </ul>
+
+    <%= link_to "Commencer une nouvelle partie.", new_game_path, class:"btn btn-primary rounded-pill" %>
+  </div>
+</div>
