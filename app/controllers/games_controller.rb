@@ -3,7 +3,6 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-
   def create
     @game = Game.new(user: current_user)
     if @game.save

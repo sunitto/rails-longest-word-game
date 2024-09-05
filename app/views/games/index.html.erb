@@ -15,6 +15,8 @@
        <%= form_with url: games_path, method: :post, local: true do %>
       <%= submit_tag "Commencer une nouvelle partie", class: "btn btn-primary rounded-pill" %>
     <% end %>
-
+    <% @games.each do |game| %>
+      <%= link_to "Parties en cours", game_path(game), class:"btn btn-primary rounded-pill" %>
+    <% end %>
   </div>
 </div>
