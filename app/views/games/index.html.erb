@@ -1,22 +1,33 @@
 <div class="container">
   <div class="row">
     <h1>Bienvenue à Longest word</h1>
-  </div>
-  <div>
-    <h2><strong>Règles du jeu:</strong></h2>
-    <p>Vous devrez composer un mot à partir d'une liste de 10 lettres aléatoires.</p>
-    <ul>
-      <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
-      <li>Seul un mot présent dans le dictionnaire sera valable.</li>
-      <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
-      <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
-    </ul>
+    <div class="gamerules">
+      <h2><strong>Règles du jeu:</strong></h2>
+      <p>Vous devrez composer un mot à partir d'une liste de 10 lettres aléatoires.</p>
+      <ul>
+       <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
+        <li>Seul un mot présent dans le dictionnaire sera valable.</li>
+        <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
+        <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
+      </ul>
     <%# <%= link_to "Commencer une nouvelle partie", games_path, method: :post, class: "btn btn-primary rounded-pill" %>
-       <%= form_with url: games_path, method: :post, local: true do %>
-      <%= submit_tag "Commencer une nouvelle partie", class: "btn btn-primary rounded-pill" %>
-    <% end %>
-    <% @games.each do |game| %>
-      <%= link_to "Parties en cours", game_path(game), class:"btn btn-primary rounded-pill" %>
-    <% end %>
+      <%= form_with url: games_path, method: :post, local: true do %>
+        <%= submit_tag "Commencer une nouvelle partie", class: "btn btn-primary rounded-pill" %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+<% @games.each do |game| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Partie <%= game.id %> en cours</h2>
+        <p>Score: </p>
+      </div>
+    <div class="blocparty">
+    <%= link_to "Parties en cours", game_path(game), class:"btn btn-primary rounded-pill" %>
+<% end %>
+    </div>
+  </div>
