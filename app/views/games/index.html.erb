@@ -23,11 +23,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2>Partie <%= game.id %> en cours</h2>
+        <h2>Jeu en cours <%= game.id %> en cours</h2>
         <p>Score: </p>
       </div>
     <div class="blocparty">
-    <%= link_to "Parties en cours", game_path(game), class:"btn btn-primary rounded-pill" %>
+    <%= link_to "Jeu en cours", game_path(game), class:"btn btn-primary rounded-pill" %>
 <% end %>
     </div>
   </div>

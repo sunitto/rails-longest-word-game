@@ -1,4 +1,10 @@
 <%# on met un formulaire simple form en place %>
+<%= @party.ten_letters_list %>
+
+<%= simple_form_for [@game, @party] do |f| %>
+  <%= f.input :word, label: "Votre mot le plus long" %>
+  <%= f.submit "Valider", class: "btn btn-primary rounded-pill" %>
+<% end %>
 <%# on affiche les 10 lettres générées %>
 <%# on a un champ pour rentrer le mot %>
 <%# on a un bouton pour valider %>
@@ -7,3 +13,4 @@
 <%# on affiche un bouton pour recommencer %>
 <%# on affiche un bouton pour retourner à l'index %>
 <%# on affiche un bouton pour retourner à la partie en cours %>
+<%= link_to "Retour au jeu en cours", game_path(@game), class: "btn btn-primary rounded-pill" %>
