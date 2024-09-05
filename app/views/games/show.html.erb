@@ -30,12 +30,13 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @game.parties.each do |party| %>%
+    <% @game.parties.each do |party| %>
       <div class="col-12">
       <h2>Partie n° <%= party.id %> en cours </h2>
       <p>Score: </p>
       <%= link_to "Partie en cours", game_party_path(@game), class:"btn btn-primary rounded-pill" %>
       <% end %>
+      <%= link_to "revenir au récapitulatif des parties", games_path(@game), class:"btn btn-primary rounded-pill" %>
       </div>
   </div>
 </div>

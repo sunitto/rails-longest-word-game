@@ -15,6 +15,11 @@ class PartiesController < ApplicationController
     end
   end
 
+  def show
+    @party = Party.find(params[:id])
+    @game = @party.game
+  end
+
   private
 
   def party_params
