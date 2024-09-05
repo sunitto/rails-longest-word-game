@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
 
-    <h1>Bienvenue dans la Partie n°<%= @game.id %></h1>
+    <h1>Bienvenue dans le jeu n°<%= @game.id %></h1>
 
   </div>
   <div>
@@ -18,7 +18,13 @@
       <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
       <li>Seul un mot présent dans le dictionnaire sera valable.</li>
       <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
-      <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
+      <li>Chaque jeu est composé de 5 parties. Tenez de battre votre record!</li>
     </ul>
+  </div>
+</div>
+<div>
+  Pour démarrer une nouvelle partie, c'est juste en dessous!
+  <div>
+    <%= link_to "Commencer une nouvelle partie", new_game_party_path(@game), class: "btn btn-primary rounded-pill" %>
   </div>
 </div>
