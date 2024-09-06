@@ -16,4 +16,9 @@ class Party < ApplicationRecord
     end
     ten_letters.shuffle.join.to_s
   end
+
+  def score
+    return 0 if word.nil? || word.blank?
+    word.length
+  end
 end

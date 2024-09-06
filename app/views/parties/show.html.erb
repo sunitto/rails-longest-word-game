@@ -1,4 +1,4 @@
-<h2>Votre score est de</h2>
-<h2>votre mot est</h2>
+<h2>Votre score est de <%= @party.word.length %></h2>
+<h2>votre mot est <%= @party.word %></h2>
 <h2></h2>
 <%= link_to "retour en arrière", game_path(@game), class:"btn btn-primary rounded-pill" %>
