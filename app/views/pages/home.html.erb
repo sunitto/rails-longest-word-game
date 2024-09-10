@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row d-flex justify-content-center">
-    <h1>LONGEST WORD GAME</h1>
-    <p>le jeu du mot le plus long</p>
+  <div class="d-flex justify-content-center">
+    <% %w[L O N G E S T - W O R D].each do |letter| %>
+      <div class="letter-cards">
+        <%= letter %>
+      </div>
+    <% end %>
   </div>
-   <%= link_to "Enter the game", games_path, class:"btn btn-primary rounded-pill" %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Enter the game", games_path, class:"home-enter-btn" %>
+  </div>
 </div>
-

@@ -1,0 +1,39 @@
+.home-enter-btn {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid black;
+  margin-top: 100px;
+  width: fit-content;
+
+  &:hover {
+    text-decoration:none;
+    color:black;
+
+  }
+}
+
+.custom-btn {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid black;
+  margin: 20px;
+  width: fit-content;
+
+  &:hover {
+    text-decoration:none;
+    color:black;
+
+  }
+}

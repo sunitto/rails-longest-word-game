@@ -10,4 +10,16 @@
 // Your CSS partials
 // @import "components/index";
 // @import "pages/index";
-@import "components/navbar"
+@import "components/navbar";
+@import "components/home";
+@import "components/buttons";
+@import "components/cards";
+
+body {
+  background-image: asset-url('background-letters.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
