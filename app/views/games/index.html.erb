@@ -35,7 +35,7 @@
         <p>Score: <%= game.parties.sum { |party| party.score } %></p>
       </div>
     <div class="blocparty">
-    <%= link_to "Jeu en cours", game_path(game), class:"custom-btn" %>
+    <%= link_to "Jeu en cours", game_path(game), class:"current-game-access-btn" %>
     </div>
   </div>
 </div>

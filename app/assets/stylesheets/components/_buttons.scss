@@ -1,8 +1,7 @@
-.home-enter-btn {
+.home-enter-btn, .custom-btn, .current-game-access-btn {
   background-color: rgb(255, 255, 255);
   color: #000000;
   padding: 10px 20px;
-  border-radius: 5px;
   font-size: 30px;
   border-radius: 15px;
   cursor: pointer;
@@ -13,27 +12,19 @@
 
   &:hover {
     text-decoration:none;
-    color:black;
+    color:white;
+    background-color:rgb(184, 143, 20);
+    transition: 0.1s;
 
   }
 }
 
 .custom-btn {
-  background-color: rgb(255, 255, 255);
-  color: #000000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 30px;
-  border-radius: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  border: 2px solid black;
   margin: 20px;
-  width: fit-content;
+}
 
-  &:hover {
-    text-decoration:none;
-    color:black;
-
-  }
+.current-game-access-btn {
+  position: relative;
+  bottom: 15px;
+  left: 489px;
 }
