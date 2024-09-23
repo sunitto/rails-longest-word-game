@@ -31,8 +31,18 @@
   <div class="container game-recap-card">
     <div class="row">
       <div class="col-12">
+      <%# affichage de l'ID du jeu %>
         <h2>Jeu n° <%= game.id %> </h2>
-        <p>Score: <%= game.parties.sum { |party| party.score } %></p>
+      <%# affichage du score total d'une game %>
+        <p>Score total: <%= game.parties.sum { |party| party.score } %></p>
+      <%# affichage du mot et du score de chaque party correspondante à la game %>
+        <% game.parties.each do |party| %>
+          <div class="party-tab">
+            <p>partie n° <%= party.id %> </p>
+            <p>Votre mot: <%= party.word %> </p>
+            <p>Votre score: <%= party.score %> </p>
+          </div>
+        <% end %>
       </div>
     <div class="blocparty">
     <%= link_to "Jeu en cours", game_path(game), class:"current-game-access-btn" %>

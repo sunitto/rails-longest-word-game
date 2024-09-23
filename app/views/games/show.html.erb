@@ -7,37 +7,45 @@
 <%# on affiche un bouton pour recommencer %>
 <div class="container">
   <div class="row">
-
-    <h1>Bienvenue dans le jeu n°<%= @game.id %></h1>
-
-  </div>
-  <div>
-    <h2><strong>Rappel des règles</strong></h2>
-    <p>Vous devrez composer un mot à partir d'une liste de 10 lettres aléatoires.</p>
-    <ul>
-      <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
-      <li>Seul un mot présent dans le dictionnaire sera valable.</li>
-      <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
-      <li>Chaque jeu est composé de 5 parties. Tenez de battre votre record!</li>
-    </ul>
-  </div>
-</div>
-<div>
-  Pour démarrer une nouvelle partie, c'est juste en dessous!
-  <div>
-    <%= link_to "Commencer une nouvelle partie", new_game_party_path(@game), class: "btn btn-primary rounded-pill" %>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <% @game.parties.each_with_index do |party, index| %>
-      <div class="col-12">
-      <h2>Partie n° <%= index + 1 %> en cours </h2>
-      <p>Score: <%= party.word.length %> </p>
-      <p>Votre mot: <%= party.word %> </p>
-      <%= link_to "Détails", game_party_path(@game), class:"btn btn-primary rounded-pill" %>
+  <%# bloc pour le titre de la page %>
+    <div class="d-flex justify-content-center">
+      <% %w[P A R T I E ° ].each do |letter| %>
+        <div class="letter-cards">
+          <%= letter %>
+        </div>
       <% end %>
-      <%= link_to "revenir au récapitulatif des jeux", games_path(@game), class:"btn btn-primary rounded-pill" %>
+      <div class="letter-cards party-number-card">
+        <%= @game.id %>
       </div>
+    </div>
+
+
+  <%# bloc pour la card des règles du jeu %>
+    <div class="rules-card">
+      <p>Vous devrez composer un mot à partir d'une liste de 10 lettres aléatoires.</p>
+      <ul>
+       <li>Bien évidemment, aucuns mots inventés ne sera validé</li>
+        <li>Seul un mot présent dans le dictionnaire sera valable.</li>
+        <li>Si le mot est validé, alors vous gagnerez 1 point par lettre qui compose le mot.</li>
+        <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
+      </ul>
+      <h1> Pour démarrer une nouvelle partie, c'est juste en dessous! </h1>
+        <%= link_to "Nouvelle partie", new_game_party_path(@game), class: "custom-btn" %>
+    </div>
   </div>
 </div>
+
+
+<% @game.parties.each_with_index do |party, index| %>
+  <div class="container party-recap-card">
+    <div class="row">
+      <div class="col-12">
+        <h2>Partie n° <%= index + 1 %> en cours </h2>
+        <p>Score: <%= party.word.length %> </p>
+        <p>Votre mot: <%= party.word %> </p>
+        <%= link_to "Détails", game_party_path(@game), class:"custom-btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+  <%= link_to "revenir au récapitulatif des jeux", games_path(@game), class:"custom-btn" %>
