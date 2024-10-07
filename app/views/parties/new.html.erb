@@ -8,7 +8,7 @@
 </div>
 
 <%= simple_form_for [@game, @party] do |f| %>
-  <%= f.input :word, label: "Votre mot le plus long" %>
+  <%= f.input :word, label: "Votre mot le plus long", required: true %>
   <%= f.submit "Valider", class: "custom-btn" %>
 <% end %>
 <%# on affiche les 10 lettres générées %>

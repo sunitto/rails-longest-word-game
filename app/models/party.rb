@@ -17,6 +17,13 @@ class Party < ApplicationRecord
     ten_letters.shuffle.join.to_s
   end
 
+  def self.verif_word(ten_letters_list, word)
+    check_word = Hash.new(0)
+    ten_letters_list.each_char { |letter| check_word[letter.downcase] += 1 }
+    word.each_char { |letter| check_word[letter.downcase] -= 1 }
+    check_word.values.all? { |value| value >= 0 }
+  end
+
   def score
     return 0 if word.nil? || word.blank?
     word.length

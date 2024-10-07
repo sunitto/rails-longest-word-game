@@ -5,6 +5,7 @@
 <%# si c'est ok, on est redirigé sur le show %>
 <%# on affiche les 10 lettres générées précédemment avec le mot et une formule de calcul de points %>
 <%# on affiche un bouton pour recommencer %>
+
 <div class="container">
   <div class="row">
   <%# bloc pour le titre de la page %>
@@ -30,7 +31,9 @@
         <li>Chaque partie est composé de 5 manches. Tenez de battre votre record!</li>
       </ul>
       <h1> Pour démarrer une nouvelle partie, c'est juste en dessous! </h1>
+      <div>
         <%= link_to "Nouvelle partie", new_game_party_path(@game), class: "custom-btn" %>
+      </div>
     </div>
   </div>
 </div>
